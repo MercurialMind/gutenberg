@@ -181,6 +181,22 @@ export function hideBlockTypes( blockNames ) {
 }
 
 /**
+ * Returns an action object used in signaling that a style should be auto-applied when a block is created.
+ *
+ * @param {string}  blockName  Name of the block.
+ * @param {?string} blockStyle Name of the style that should be auto applied. If undefined, the "auto apply" setting of the block is removed.
+ *
+ * @return {Object} Action object.
+ */
+export function updateDefaultBlockStyles( blockName, blockStyle ) {
+	return {
+		type: 'UPDATE_DEFAULT_BLOCK_STYLES',
+		blockName,
+		blockStyle,
+	};
+}
+
+/**
  * Returns an action object used in signalling that block types by the given
  * name(s) should be shown.
  *
